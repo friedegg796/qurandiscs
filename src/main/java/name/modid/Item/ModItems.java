@@ -12,7 +12,7 @@ import net.minecraft.world.item.*;
 import org.spongepowered.include.com.google.common.base.Function;
 
 import static name.modid.Qurandiscs.MOD_ID;
-import static net.minecraft.world.item.Items.registerItem;
+
 
 public class ModItems {
     public static <GenericItem extends Item> GenericItem register(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
@@ -28,8 +28,11 @@ public class ModItems {
         return item;
     }
 
-    public static final Item fathia = registerItem("fathia", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
-    //.jukeboxPlayable(JukeboxQuran.FATHIA)
+    public static final Item fathia = register("fathia", Item::new, new Item.Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+            //.jukeboxPlayable()
+    );
 
     public static final ResourceKey<CreativeModeTab> CUSTOM_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(MOD_ID, "item_group"));
     public static final CreativeModeTab CUSTOM_ITEM_GROUP = FabricItemGroup.builder()

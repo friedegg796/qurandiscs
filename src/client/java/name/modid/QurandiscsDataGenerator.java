@@ -8,5 +8,6 @@ public class QurandiscsDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(QurandiscsEnglishLangProvider::new);
+        pack.addProvider(QurandiscsModelProvider::new);
     }
 }

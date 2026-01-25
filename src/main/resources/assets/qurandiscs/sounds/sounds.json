@@ -1,0 +1,9 @@
+{
+  "fathia": {
+    "category": "record",
+    "sounds": [
+      "qurandiscs:fathia_disc",
+      "stream:true"
+    ]
+  }
+}
