@@ -28,15 +28,20 @@ public class ModItems {
         return item;
     }
 
-    public static final Item fathia = register("fathia", Item::new, new Item.Properties()
-                    .stacksTo(1)
-                    .rarity(Rarity.UNCOMMON)
-            //.jukeboxPlayable()
+    public static ResourceKey<JukeboxSong> registerQuran(String name) {
+        return ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath(MOD_ID, name));
+    }
+
+    public static final Item fathia_disc = register("fathia_disc", properties -> properties != null ? new Item(properties) : null, new Item.Properties()
+            .stacksTo(1)
+            .rarity(Rarity.UNCOMMON)
+            .jukeboxPlayable(registerQuran("fathia_surah"))
     );
+    
 
     public static final ResourceKey<CreativeModeTab> CUSTOM_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(MOD_ID, "item_group"));
     public static final CreativeModeTab CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.fathia))
+            .icon(() -> new ItemStack(ModItems.fathia_disc))
             .title(Component.translatable("itemGroup.qurandiscs"))
             .build(); // all the .things mean that they are a part of FabricItemGroup.builder, with ; ending them.
 
@@ -45,15 +50,15 @@ public class ModItems {
         // Get the event for modifying entries in the ingredients group.
         // And register an event handler that adds our suspicious item to the ingredients group.
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES) // you change this part if you wanna put it in other tabs
-                .register((itemGroup) -> itemGroup.accept(ModItems.fathia));
+                .register((itemGroup) -> itemGroup.accept(ModItems.fathia_disc));
 
 
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CUSTOM_ITEM_GROUP_KEY, CUSTOM_ITEM_GROUP);
-        //Registry.register(BuiltInRegistries.SOUND_EVENT, Identifier.fromNamespaceAndPath(MOD_ID, "fathia"),
-        //SoundEvent.createVariableRangeEvent(Identifier.fromNamespaceAndPath(MOD_ID, "fathia")));
+        //Registry.register(BuiltInRegistries.SOUND_EVENT, Identifier.fromNamespaceAndPath(MOD_ID, "fathia_disc"),
+        //SoundEvent.createVariableRangeEvent(Identifier.fromNamespaceAndPath(MOD_ID, "fathia_disc")));
 
         ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
-            itemGroup.accept(ModItems.fathia); // within the register (itemgroup because of ->
+            itemGroup.accept(ModItems.fathia_disc); // within the register (itemgroup because of ->
         });
     }
 }

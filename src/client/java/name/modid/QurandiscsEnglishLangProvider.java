@@ -16,8 +16,8 @@ public class QurandiscsEnglishLangProvider extends FabricLanguageProvider {//THE
     @Override
     public void generateTranslations(HolderLookup.Provider wrapperLookup, FabricLanguageProvider.TranslationBuilder translationBuilder) {
         translationBuilder.add("itemGroup.qurandiscs", "Quran Discs");
-        translationBuilder.add("item.minecraft.fathia", "Surah Fathia Disc");
-        translationBuilder.add("item.minecraft.fathia.desc", "Surah Fathia Disc");
+        translationBuilder.add("item.qurandiscs.fathia_disc", "Surah Fathia Disc");
+        translationBuilder.add("item.qurandiscs.fathia_disc.desc", "Surah Fathia Disc");
     }
 
 }

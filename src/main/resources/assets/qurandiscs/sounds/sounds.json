@@ -1,9 +1,10 @@
 {
-  "fathia": {
-    "category": "record",
+  "fathia_surah": {
     "sounds": [
-      "qurandiscs:fathia_disc",
-      "stream:true"
+      {
+        "name": "qurandiscs:fathia_surah",
+        "stream": true
+      }
     ]
   }
 }

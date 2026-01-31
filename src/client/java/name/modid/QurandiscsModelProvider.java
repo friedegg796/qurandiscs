@@ -19,7 +19,7 @@ public class QurandiscsModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-        itemModelGenerator.generateFlatItem(ModItems.fathia, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.fathia_disc, ModelTemplates.FLAT_ITEM);
         //ModItems takes from wanderingmuslim.qurandiscs.item.moditems
     }
 

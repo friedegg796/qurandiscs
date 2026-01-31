@@ -3,7 +3,6 @@ package name.modid;
 import name.modid.Item.CustomSounds;
 import name.modid.Item.ModItems;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +21,9 @@ public class Qurandiscs implements ModInitializer {
         // Proceed with mild caution.
 
         LOGGER.info("Hello Fabric world!");
-        ModItems.initialize();
         CustomSounds.initialize();
+        ModItems.initialize();
+
     }
 }
+

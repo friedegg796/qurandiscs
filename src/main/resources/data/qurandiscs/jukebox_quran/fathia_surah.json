@@ -1,0 +1,10 @@
+{
+  "comparator_output": "1",
+  "description": {
+    "translate": "item.qurandiscs.fathia.desc"
+  },
+  "length_in_seconds": 48,
+  "sound_event": {
+    "sound_id": "qurandiscs:fathia_surah"
+  }
+}
