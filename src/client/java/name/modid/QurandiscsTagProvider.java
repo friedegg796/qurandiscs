@@ -17,8 +17,9 @@ public class QurandiscsTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
         valueLookupBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
-                .add(ModItems.fathia_disc.asItem());
+                .add(ModItems.fathia_disc.asItem()
+                );
 
-        
+
     }
 }

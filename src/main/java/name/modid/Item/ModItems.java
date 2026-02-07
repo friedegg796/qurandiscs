@@ -28,16 +28,14 @@ public class ModItems {
         return item;
     }
 
-    public static ResourceKey<JukeboxSong> registerQuran(String name) {
-        return ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath(MOD_ID, name));
-    }
 
     public static final Item fathia_disc = register("fathia_disc", properties -> properties != null ? new Item(properties) : null, new Item.Properties()
-            .stacksTo(1)
-            .rarity(Rarity.UNCOMMON)
-            .jukeboxPlayable(registerQuran("fathia_surah"))
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)
+                    .jukeboxPlayable(CustomSounds.registerQuran("fathia_disc"))
+            //JukeboxSongs.ELEVEN
     );
-    
+
 
     public static final ResourceKey<CreativeModeTab> CUSTOM_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(MOD_ID, "item_group"));
     public static final CreativeModeTab CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
